@@ -775,12 +775,12 @@ BacklogDirective = ($repo, $rootscope, $translate, $rs) ->
         if $ctrl.showTags
             elm.addClass("active")
 
-            text = $translate.instant("BACKLOG.TAGS.HIDE")
+            # text = $translate.instant("BACKLOG.TAGS.HIDE")
             elm.text(text)
         else
             elm.removeClass("active")
 
-            text = $translate.instant("BACKLOG.TAGS.SHOW")
+            # text = $translate.instant("BACKLOG.TAGS.SHOW")
             elm.text(text)
 
     openFilterInit = ($scope, $el, $ctrl) ->
