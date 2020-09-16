@@ -80,7 +80,7 @@ class BacklogController extends mixOf(taiga.Controller, taiga.PageMixin, taiga.F
         return if @.applyStoredFilters(@params.pslug, "backlog-filters")
 
         @scope.sectionName = @translate.instant("BACKLOG.SECTION_NAME")
-        @showTags = false
+        @showTags = true
         @activeFilters = false
         @scope.showGraphPlaceholder = null
         @displayVelocity = false
