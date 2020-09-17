@@ -55,12 +55,31 @@
 }
 
 .backlog-table-options-start {
+    align-items: center;
     display: flex;
 
     > * {
         margin-right: .5rem;
     }
 }
+
+.display-tags-button {
+    align-items: center;
+    display: flex;
+
+    label {
+        @include font-size(small);
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    .check {
+        margin-right: .5rem;
+    }
+}
+
 
 .multiple-drag-mirror.us-item-row {
     background: $white;

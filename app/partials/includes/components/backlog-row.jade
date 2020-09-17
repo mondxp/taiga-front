@@ -32,10 +32,11 @@
                 ng-if="us.due_date"
                 obj-type="us"
             )
-            span.tag(
-                ng-repeat="tag in us.tags"
-                ng-style="{background: tag[1]}"
-            ) {{tag[0]}}
+            ng-container(ng-if="ctrl.showTags")
+                span.tag(
+                    ng-repeat="tag in us.tags"
+                    ng-style="{background: tag[1]}"
+                ) {{tag[0]}}
             tg-belong-to-epics(
                 format="pill"
                 ng-if="us.epics"

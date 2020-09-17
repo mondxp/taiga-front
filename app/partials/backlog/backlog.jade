@@ -47,10 +47,16 @@ div.wrapper(tg-backlog, ng-controller="BacklogController as ctrl",
 
                         .display-tags-button#show-tags
 
-                            .check.js-check(ng-if="userstories.length")
+                            .check.js-check(
+                                ng-if="userstories.length"
+                                ng-class="{'active': ctrl.showTags}"
+                            )
                                 input(
                                     type="checkbox"
                                     id="show-tags-input"
+                                    ng-checked="ctrl.showTags"
+                                    ng-model="ctrl.showTags"
+                                    ng-change="ctrl.toggleShowTags()"
                                 )
                                 div
                             label(

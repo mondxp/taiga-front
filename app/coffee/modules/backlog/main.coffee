@@ -746,12 +746,12 @@ BacklogDirective = ($repo, $rootscope, $translate, $rs) ->
 
             $scope.$apply(_.partial(moveToCurrentSprint, ussToMove))
 
-        $el.on "click", "#show-tags", (event) ->
-            event.preventDefault()
+        # $el.on "click", "#show-tags", (event) ->
+        #     event.preventDefault()
 
-            $ctrl.toggleShowTags()
+        #     $ctrl.toggleShowTags()
 
-            showHideTags($ctrl)
+        #     showHideTags($ctrl)
 
         $el.on "click", ".forecasting-add-sprint", (event) ->
             ussToMoveList = $ctrl.forecastedStories
@@ -776,12 +776,12 @@ BacklogDirective = ($repo, $rootscope, $translate, $rs) ->
             elm.addClass("active")
 
             # text = $translate.instant("BACKLOG.TAGS.HIDE")
-            elm.text(text)
+            # elm.text(text)
         else
             elm.removeClass("active")
 
             # text = $translate.instant("BACKLOG.TAGS.SHOW")
-            elm.text(text)
+            # elm.text(text)
 
     openFilterInit = ($scope, $el, $ctrl) ->
         sidebar = $el.find(".backlog-filter")
