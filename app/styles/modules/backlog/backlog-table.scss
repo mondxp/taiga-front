@@ -21,28 +21,24 @@
     .backlog-table-title,
     .row {
         .draggable-us-row {
-            flex-basis: 25px;
             flex-grow: 0;
             flex-shrink: 0;
-            height: 22px;
-
+            margin-inline-end: .25rem;
             tg-svg {
-                justify-content: flex-start;
                 svg {
-                    @include svg-size(1.4rem);
+                    @include svg-size(24px);
                 }
             }
         }
         .input {
             align-items: center;
             display: flex;
-            flex-basis: 25px;
             flex-grow: 0;
             flex-shrink: 0;
+            margin-inline-end: .75rem;
         }
         .user-stories {
             flex: 1;
-            margin-block-start: -.5rem;
         }
         .status {
             flex-basis: 150px;
@@ -258,10 +254,7 @@
         flex-wrap: nowrap;
         position: relative;
         &:hover:not(.blocked) {
-            background-color: $primary-10;
-            .us-settings {
-                opacity: 1;
-            }
+            background-color: $color-gray200;
         }
         &:last-child {
             border-bottom: 0;
@@ -278,13 +271,15 @@
             }
         }
         .icon-arrow-down {
+            @include svg-size(1rem);
             fill: $gray-light;
-            height: .7rem;
-            width: .7rem;
         }
     }
     .gu-transit {
         background: $color-gray100;
+    }
+    .user-story-main-data {
+        margin-top: -.1rem;
     }
     .sortable-placeholder {
         background: $mass-white;
@@ -300,54 +295,42 @@
             transition: color .2s ease-in;
         }
     }
-    .user-story-main-data {
-        @include font-type(light);
-        align-items: flex-start;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .user-story-number,
-    .user-story-name {
+    .user-story-link {
         @include font-size(small);
         @include font-type(text);
+        &:hover {
+            .user-story-name {
+                color: $color-link-primary;
+            }
+        }
     }
     .user-story-number {
         color: $color-link-primary;
-        margin-block-start: .5rem;
-        margin-inline-end: .5rem;
+        margin-inline-end: .25rem;
     }
     .user-story-name {
         color: $color-black600;
-        margin-block-start: .5rem;
-        margin-inline-end: 1rem;
+        margin-inline-end: .5rem;
+    }
+    .due-date-icon {
+        margin-block-start: -.25rem;
+        margin-inline-end: .5rem;
+        position: relative;
+        top: .25rem;
     }
     .tag {
-        &:last-of-type {
+        position: relative;
+        top: .25rem;
+        &.last {
             margin-inline-end: .75rem;
         }
     }
-    .epics {
-        margin-top: .5rem;
+    .belong-to-epic-pill {
+        position: relative;
+        top: .1rem;
     }
     .blocked {
-        background: $red-light;
-        border-bottom: 1px solid $white;
-        color: $white;
-        a {
-            color: $white !important; /* stylelint-disable-line declaration-no-important */
-            &:hover {
-                color: $white;
-            }
-        }
-        .icon,
-        .icon:hover,
-        .due-date-icon {
-            fill: $white;
-            stroke: $white;
-            &:hover {
-                color: $white;
-            }
-        }
+        background: $color-solid-red;
     }
     .us-settings {
         flex-shrink: 0;
@@ -367,8 +350,11 @@
         padding-right: 45px;
     }
     .us-status {
+        @include font-size(small);
+        align-items: center;
+        display: inline-flex;
         tg-svg {
-            display: inline-block;
+            margin-inline-start: .25rem;
         }
     }
     .loading {
